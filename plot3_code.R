@@ -1,5 +1,6 @@
 setwd("C:/Users/jiameng.yu/Desktop/Statistics_course/Course 4 - Exploratory Data Analysis/Course Project 1")
 library(dplyr)
+library(lubridate)
 ## reading the relevant part of data
 electric <- read.table("household_power_consumption.txt", sep=";", header=TRUE, nrows=70000)
 ## extracting relevant parts of data as filter doesnt seem to work
@@ -29,5 +30,5 @@ lines(graph3$Datetime,graph3$Sub_metering_2,col="red")
 lines(graph3$Datetime,graph3$Sub_metering_3,col="blue")
 locations = floor(seq(from=1,to=nrow(graph3),by=nrow(graph3)/3))
 axis(side = 1, at = locations, labels=graph3$wdays[locations],las=2)
-legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty=c(1,1,1),col=c("black","blue","red"),bty="n")
+legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),lty=c(1,1,1),col=c("black","blue","red"))
 dev.off()
